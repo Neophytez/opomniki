@@ -23,13 +23,19 @@ window.addEventListener('load', function() {
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
-		
+		var i;
 		for (i = 0; i < opomniki.length; i++) {
 			var opomnik = opomniki[i];
 			var casovnik = opomnik.querySelector("span");
 			var cas = parseInt(casovnik.innerHTML);
 	
-			//TODO: 
+			//TODO:
+			if(cas == 0) {
+				alert("Opomnik!\n\nZadolžitev NAZIV_OPOMNIK je potekla!");
+			} else {
+				cas -= 1;
+				casovnik.innerHTML = cas;
+			}
 			// - če je čas enak 0, izpiši opozorilo "Opomnik!\n\nZadolžitev NAZIV_OPOMNIK je potekla!"
 			// - sicer zmanjšaj čas za 1 in nastavi novo vrednost v časovniku
 		}
